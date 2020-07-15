@@ -7,6 +7,18 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     @Column(name = "book_name",nullable = false)
     private String name;
     private String author;
