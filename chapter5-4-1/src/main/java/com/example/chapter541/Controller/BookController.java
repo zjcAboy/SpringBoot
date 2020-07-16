@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-
+//两种方式注入JdbcTemplate实例
+// 一种是@Resource("实例名")
+//另一种是@Autowired
+//    @Qualifier("实例名")
 @RestController
 public class BookController {
     @Resource(name = "jdbcTemplateOne")
