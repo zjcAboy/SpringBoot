@@ -1,6 +1,5 @@
 package com.example.chapter542.Config;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -13,19 +12,19 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(value = "com.example.chapter542.mapper1",sqlSessionFactoryRef = "sqlSessionFactoryBean1")
-public class MyBatisConfigOne {
+@MapperScan(value = "com.example.chapter542.mapper2",sqlSessionFactoryRef = "sqlSessionFactoryBean2")
+public class MyBatisConfigTwo {
     @Autowired
-    @Qualifier("dsOne")
-    DataSource dsOne;
+    @Qualifier("dsTwo")
+    DataSource dsTwo;
     @Bean
-    SqlSessionFactory sqlSessionFactoryBean1() throws Exception{
+    SqlSessionFactory sqlSessionFactoryBean2() throws Exception{
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-        factoryBean.setDataSource(dsOne);
+        factoryBean.setDataSource(dsTwo);
         return factoryBean.getObject();
     }
     @Bean
-    SqlSessionTemplate sqlSessionTemplate1() throws Exception{
-        return new SqlSessionTemplate((sqlSessionFactoryBean1()));
+    SqlSessionTemplate sqlSessionTemplate2() throws Exception{
+        return new SqlSessionTemplate(sqlSessionFactoryBean2());
     }
 }
