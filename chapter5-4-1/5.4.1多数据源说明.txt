@@ -1,0 +1,4 @@
+1、创建数据库
+2、配置数据库连接（不同的数据库）
+3、配置数据源（DataSourceConfig）
+4、配置JdbcTemplate
