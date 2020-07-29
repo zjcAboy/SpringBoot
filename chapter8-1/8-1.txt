@@ -1,0 +1,14 @@
+
+devtools中添加模块
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>2.3.2.RELEASE</version>
+            <optional>true</optional>
+</dependency>
+单击 File settings 菜单 打开 Settings页面,在左边的菜单栏依次找
+Build,Execution Deployment->Compile 勾选 Build project automatically
+按Ctrl+shift+A 快捷键选择Actions 选择Registry……
+勾选 compiler.automake.allow.when.app.running复选框
+//注
+classpath 路径下的静态资源或者视图模板等发生变化时，并不会导致项目重启。
